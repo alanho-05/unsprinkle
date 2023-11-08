@@ -4,8 +4,11 @@ import styled from 'styled-components/macro';
 const Hero = () => {
   return (
     <Wrapper>
-      <HeroImage src="/images/hero-img.jpg" />
-      <Swoop src="/swoop.svg" />
+      <ImageWrapper>
+        <HeroSource />
+        <HeroImage src="/images/hero-img.jpg" alt="Hero image of a tabby cat" />  
+      </ImageWrapper>
+      <Swoop src="/swoop.svg" alt="" />
     </Wrapper>
   );
 };
@@ -18,6 +21,18 @@ const Wrapper = styled.section`
   justify-content: center;
   align-items: flex-end;
   background: hsl(0deg 0% 1%);
+`;
+
+const ImageWrapper = styled.picture``;
+
+const HeroSource = styled.source`
+  srcset: 
+  hero-img.jpg,
+  hero-img.avif,
+  hero-img@2x.jpg,
+  hero-img@2x.avif,
+  hero-img@3x.jpg,
+  hero-img@3x.avif
 `;
 
 const HeroImage = styled.img`
